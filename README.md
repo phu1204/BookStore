@@ -1,5 +1,5 @@
 
-# Papaya Shop
+# BookStore
 
 ## Installation
 
@@ -45,13 +45,6 @@ Install dependencies with npm
 
 ## Author
 
-[phu1204](https://github.com/phu1204)
+[@phu1204](https://github.com/phu1204)
 
 ## Feedback
-
-Check
-Le Nguyen Gia Linh
-My Uyen
-Banh He dia~ huo^ng <3 cua Aphu
-love you babe
-My Tien
