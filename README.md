@@ -45,7 +45,7 @@ Install dependencies with npm
 
 ## Author
 
-[@mphat-phan](https://github.com/mphat-phan)
+[phu1204](https://github.com/phu1204)
 
 ## Feedback
 
