@@ -6,7 +6,7 @@
 Clone
 
 ```bash
-git clone https://github.com/phongduybui/fashion-shop.git
+[git clone https://github.com/phongduybui/fashion-shop.git](https://github.com/phu1204/BookStore.git)
 ```
 
 Install dependencies with npm
