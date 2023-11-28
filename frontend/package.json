@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "chart.js": "^3.7.1",
+    "cybershop-ecommerce": "file:..",
     "faker": "^5.5.3",
     "lodash.omit": "^4.5.0",
     "money": "^0.2.0",
