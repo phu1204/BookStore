@@ -15,6 +15,7 @@
     "chart.js": "^3.7.1",
     "cybershop-ecommerce": "file:..",
     "faker": "^5.5.3",
+    "jsonwebtoken": "^9.0.2",
     "lodash.omit": "^4.5.0",
     "money": "^0.2.0",
     "query-string": "^7.0.0",
