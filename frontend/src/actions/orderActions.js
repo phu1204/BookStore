@@ -5,38 +5,38 @@ import {
   ORDER_CREATE_REQUEST,
   ORDER_CREATE_SUCCESS,
   ORDER_CREATE_FAIL,
-  
+
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
   ORDER_DETAILS_FAIL,
-  
+
   ORDER_PAY_REQUEST,
   ORDER_PAY_SUCCESS,
   ORDER_PAY_FAIL,
-  
+
   ORDER_LIST_MY_REQUEST,
   ORDER_LIST_MY_SUCCESS,
   ORDER_LIST_MY_FAIL,
   ORDER_LIST_REQUEST,
   ORDER_LIST_SUCCESS,
   ORDER_LIST_FAIL,
-  
+
   ORDER_DELIVER_REQUEST,
   ORDER_DELIVER_SUCCESS,
   ORDER_DELIVER_FAIL,
-  
+
   ORDER_CANCEL_FAIL,
   ORDER_CANCEL_REQUEST,
   ORDER_CANCEL_SUCCESS,
-  
+
   ORDER_CONFIRM_FAIL,
   ORDER_CONFIRM_REQUEST,
   ORDER_CONFIRM_SUCCESS,
-  
+
   ORDER_DELIVERING_FAIL,
   ORDER_DELIVERING_REQUEST,
   ORDER_DELIVERING_SUCCESS,
-  
+
   REVENUE_FAIL,
   REVENUE_REQUEST,
   REVENUE_SUCCESS,
@@ -102,7 +102,7 @@ export const getRevenue = (year) => async(dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    
+
     var total = [];
     var revenueYear = [];
 
@@ -112,6 +112,7 @@ export const getRevenue = (year) => async(dispatch, getState) => {
         let color2 = faker.datatype.number({ min: 0, max: 255 })
         let color3 = faker.datatype.number({ min: 0, max: 255 })
         var {data} = await axios.get(`/api/orders/revenue/deliveredAt/${label}`, config);
+        // eslint-disable-next-line array-callback-return
         data.map((elm) => {
           total.push(elm.total)
         })
@@ -154,7 +155,7 @@ export const getSellingProduct = (top, year, month) => async(dispatch, getState)
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    
+
     var { data } = await axios.get(`/api/orders/${top}/sellingProducts/${year}/${month}`, config);
     dispatch({
       type: SELLING_PRODUCT_SUCCESS,
@@ -190,7 +191,7 @@ export const getOrderById = (id) => async (dispatch, getState) => {
         return data.items || data.results;
     }
     var currency;
-    
+
     const {
       userLogin: { userInfo },
     } = getState();
@@ -204,7 +205,7 @@ export const getOrderById = (id) => async (dispatch, getState) => {
     var { data } = await axios.get(`/api/orders/${id}`, config);
     currency = await fetchAPI(api);
     data.USD = (data.totalPrice/currency.rates.VND).toFixed(2);
-    
+
     if(data.user === null){
       data.user = {
         name : 'Tài khoản bị xóa',
