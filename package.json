@@ -27,6 +27,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "caniuse-lite": "^1.0.30001565",
     "cloudinary": "^1.26.0",
     "colors": "^1.4.0",
     "dotenv": "^9.0.2",
