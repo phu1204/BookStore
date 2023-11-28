@@ -2,19 +2,19 @@ import User from "../models/userModel.js";
 import asyncHandler from "express-async-handler";
 import generateToken from "../utils/generateToken.js";
 import Verify from "../models/verifyModel.js";
-import { transporter } from "../config/mailer.js";
+// import { transporter } from "../config/mailer.js";
 import dotenv from "dotenv";
 import { randomNumber } from "../utils/RandomNumber.js";
 import { randomPassword } from "../utils/RandomPassword.js";
 dotenv.config();
 
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Email is Ready");
-  }
-});
+// transporter.verify((error, success) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Email is Ready");
+//   }
+// });
 
 /**
  * @desc    Authenticate user & get token
@@ -450,7 +450,7 @@ const updateUserPasword = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
   const { password, oldPassword } = req.body;
   if (user && (await user.matchPassword(oldPassword))) {
-  
+
     user.password = password || user.password;
 
     const updatedUser = await user.save();
