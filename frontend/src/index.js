@@ -9,7 +9,7 @@ import './assets/scss/style.scss';
 
 import App from './App';
 import axios from 'axios';
-axios.defaults.baseURL = 'https://be-book-store-onrender.onrender.com';
+axios.defaults.baseURL = 'https://be-book-store.onrender.com';
 
 ReactDOM.render(
   <Provider store={store}>
