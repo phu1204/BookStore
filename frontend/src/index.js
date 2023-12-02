@@ -8,6 +8,8 @@ import theme from './themes/theme';
 import './assets/scss/style.scss';
 
 import App from './App';
+import axios from 'axios';
+axios.defaults.baseURL = 'https://be-book-store-onrender.onrender.com';
 
 ReactDOM.render(
   <Provider store={store}>
