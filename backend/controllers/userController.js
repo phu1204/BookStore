@@ -1,6 +1,6 @@
 import User from "../models/userModel.js";
 import asyncHandler from "express-async-handler";
-import generateToken from "../utils/generateToken.js";
+import generateToken from "../utils/GenerateToken.js";
 import Verify from "../models/verifyModel.js";
 // import { transporter } from "../config/mailer.js";
 import dotenv from "dotenv";
