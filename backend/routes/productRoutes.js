@@ -15,7 +15,7 @@ import {
   createCommentReply,
   createReviewReply
 } from '../controllers/productController.js';
-import { protect, checkAdmin } from '../middlewares/authMiddleware.js';
+import { protect, checkAdmin } from '../middlewares/AuthMiddleware.js';
 const router = express.Router();
 
 router.route('/').get(getProducts).post(protect, checkAdmin, createProduct);

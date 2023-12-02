@@ -1,16 +1,16 @@
 import express from 'express';
 const router = express.Router();
 
-import { 
+import {
   addReceiptItems,
   deleteReceiptById,
   getReceiptById,
   getReceipts,
   updateReceiptById,
-  updateReceiptToDelivered 
+  updateReceiptToDelivered
 } from '../controllers/receiptController.js';
 
-import { protect, checkAdmin } from '../middlewares/authMiddleware.js';
+import { protect, checkAdmin } from '../middlewares/AuthMiddleware.js';
 
 router
   .route('/')
@@ -23,7 +23,7 @@ router
   .get(protect, checkAdmin, getReceiptById)
   .delete(protect, checkAdmin, deleteReceiptById);
 
-router  
+router
   .route('/:id/deliverd').put(protect, checkAdmin, updateReceiptToDelivered);
 
 export default router;

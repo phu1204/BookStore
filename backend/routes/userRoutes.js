@@ -16,7 +16,7 @@ import {
   sendOTPPassword,
   updateUserPasword,
 } from '../controllers/userController.js';
-import { protect, checkAdmin } from '../middlewares/authMiddleware.js';
+import { protect, checkAdmin } from '../middlewares/AuthMiddleware.js';
 
 const router = express.Router();
 //Register

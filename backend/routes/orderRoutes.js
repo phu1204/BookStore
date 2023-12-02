@@ -13,7 +13,7 @@ import {
   updateOrderToConfirm,
   updateOrderToDelivering,
 } from '../controllers/orderControllers.js';
-import { protect, checkAdmin, checkCustomer } from '../middlewares/authMiddleware.js';
+import { protect, checkAdmin, checkCustomer } from '../middlewares/AuthMiddleware.js';
 
 router.route('/myorders').get(protect, getMyOrders);
 router
