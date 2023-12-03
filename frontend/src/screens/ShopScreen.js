@@ -169,9 +169,6 @@ const ShopScreen = ({ location, history }) => {
   if (status === false) {
     dispatch(openSnackbar("Sản phẩm đã hết hàng", "error"));
   }
-  // useEffect(() => {
-
-  // }, [history, status]);
   return (
     <Container style={{ marginBottom: 140, maxWidth: "100%" }}>
       <Meta title="Shop" />

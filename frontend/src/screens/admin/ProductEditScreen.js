@@ -98,6 +98,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [price, setPrice] = useState(0);
   const [sale, setSale] = useState(0);
   const [brand, setBrand] = useState("");
+  const [countInStock, setCountInStock] = useState(0);
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
 
@@ -139,6 +140,7 @@ const ProductEditScreen = ({ match, history }) => {
         setSale(product.sale);
         setPreviewImages(product.images);
         setCategory(product.category);
+        setCountInStock(product.countInStock);
         setDescription(product.description);
       }
     }
@@ -183,8 +185,6 @@ const ProductEditScreen = ({ match, history }) => {
         setUploading(false);
       }
     }
-
-    const countInStock = 0;
 
     const product = {
       _id: productId,
@@ -344,22 +344,37 @@ const ProductEditScreen = ({ match, history }) => {
                     ))}
                   </Box>
                 </div>
-                <TextField
-                  select
-                  variant="outlined"
-                  required
-                  name="category"
-                  label="Category"
-                  fullWidth
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                >
-                  {categorys.map((option) => (
-                    <MenuItem key={option._id} value={option.name}>
-                      {option.name}
-                    </MenuItem>
-                  ))}
-                </TextField>
+                <Box display="flex" justifyContent="space-between" >
+              <TextField
+                select
+                variant="outlined"
+                required
+                name="category"
+                label="Category"
+                fullWidth
+                style={{ flexBasis: "50%", marginRight: 8 }}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
+                {categorys.map((option) => (
+                  <MenuItem key={option._id} value={option.name}>
+                    {option.name}
+                  </MenuItem>
+                ))}
+              </TextField>
+              <TextField
+                variant="outlined"
+                required
+                name="countInStock"
+                type="number"
+                inputProps={{ min: 0, step: 1 }}
+                label="Quantity"
+                value={countInStock}
+                onChange={(e) => setCountInStock(e.target.value)}
+                style={{ flexBasis: "50%"}}
+                fullWidth
+              />
+            </Box>
 
                 <TextField
                   variant="outlined"
