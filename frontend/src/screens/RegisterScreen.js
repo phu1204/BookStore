@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(10),
     height: theme.spacing(10),
     marginTop: 12,
-    
+
   },
   avatarCenter:{
     display: 'flex',
@@ -126,7 +126,7 @@ const RegisterScreen = ({ location, history }) => {
     ) {
       setAvatar(null)
     }
-    
+
     if (avt.type === "image/jpeg" || avt.type === "image/png") {
       const data = new FormData();
       data.append("file", avt);
@@ -155,19 +155,13 @@ const RegisterScreen = ({ location, history }) => {
     if(avatar !== null){
         setAvatar(null)
     }
-   
 
     }, [dispatch, history, userInfo, redirect]);
-    
+
     const submitHandler = ({ name, email, password, address, city, postalCode, country}) => {
-      
+
       dispatch(register(name, email, password, avatar, address, city, postalCode, country));
     };
-    
-    
-  const removeAvatar = () =>{
-    setAvatar(null)
-  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -189,7 +183,7 @@ const RegisterScreen = ({ location, history }) => {
                 >
                 {/* <FormControl className={classes.avatarCenter} fullWidth style={{  marginBottom: 16  }}>
                   <input
-                      accept="image/*"                      
+                      accept="image/*"
                       style={{ display: 'none' }}
                       id="raised-button-file"
                       multiple
@@ -200,17 +194,17 @@ const RegisterScreen = ({ location, history }) => {
                     {
                       avatar ? (
                         <Avatar className={classes.lagreAvatar} src={avatar}>
-                        
+
                         </Avatar>
-                          
+
                       ) :(
                         <Avatar className={classes.lagreAvatar} src={null}></Avatar>
                       )
                     }
-                  </label>           
+                  </label>
                 </FormControl>
                  <FormControl fullWidth >
-                  
+
                     {
                       avatar !== null ? (
                       <Button

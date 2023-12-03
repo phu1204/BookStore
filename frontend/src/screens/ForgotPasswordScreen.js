@@ -87,12 +87,12 @@ const ForgotPasswordScreen = ({ location, history }) => {
   const [email, setEmail] = useState('');
   const methods = useForm();
   const { handleSubmit, getValues } = methods;
-  
+
   const dispatch = useDispatch();
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const userLogin = useSelector((state) => state.userLogin);
-  
+
   const { loading, error, message, userInfo, status } = userLogin;
   const { redirectHome = '/' } = queryString.parse(location.search);
 
@@ -131,9 +131,9 @@ const ForgotPasswordScreen = ({ location, history }) => {
                 className={classes.backIcon}
               />
               <img src={logo} alt='' className={classes.logo} />
-              
-                
-                  {userInfo ? 
+
+
+                  {userInfo ?
                   //Nếu có user info thì giao diện đổi mật khẩu
                   <>
                   <FormProvider {...methods}>
@@ -184,7 +184,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
                       }}
                     />
                   </FormControl>
-                  
+
                   <Button
                     type='submit'
                     variant='contained'
@@ -219,8 +219,8 @@ const ForgotPasswordScreen = ({ location, history }) => {
                       />
                     </FormControl>
                     {email &&
-                      <Grid 
-                      container 
+                      <Grid
+                      container
                       spacing={2}
                       justifyContent="center"
                       alignItems="center"
@@ -252,7 +252,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
                         </Grid>
                       </Grid>
                     }
-                    
+
                     <Button
                       type='submit'
                       variant='contained'

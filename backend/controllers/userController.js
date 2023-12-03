@@ -2,19 +2,19 @@ import User from "../models/userModel.js";
 import asyncHandler from "express-async-handler";
 import generateToken from "../utils/GenerateToken.js";
 import Verify from "../models/verifyModel.js";
-// import { transporter } from "../config/mailer.js";
+import { transporter } from "../config/mailer.js";
 import dotenv from "dotenv";
 import { randomNumber } from "../utils/RandomNumber.js";
 import { randomPassword } from "../utils/RandomPassword.js";
 dotenv.config();
 
-// transporter.verify((error, success) => {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("Email is Ready");
-//   }
-// });
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Email is Ready");
+  }
+});
 
 /**
  * @desc    Authenticate user & get token
@@ -181,7 +181,7 @@ const registerUser = asyncHandler(async (req, res) => {
     {
       email: user.email,
     },
-    res
+
   );
 
   if (user) {
@@ -227,21 +227,18 @@ const sendOTPVerify = async ({ email }, res) => {
 
     //Send email with otp
     await transporter.sendMail(mailOptions);
-
-    //If success
-    // res.json({
-    //   status: "PENDING",
-    //   message: "Verification otp email sent",
-    //   data: {
-    //     email
-    //   }
-    // })
+    res.json({
+      status: "PENDING",
+      message: "Verification otp email sent",
+      data: {
+        email
+      }
+    })
   } catch (error) {
-    //Else Fail
-    // res.json({
-    //   status: "FAILED",
-    //   message: error.message,
-    // })
+    res.json({
+      status: "FAILED",
+      message: error.message,
+    })
   }
 };
 
