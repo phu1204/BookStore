@@ -227,18 +227,18 @@ const sendOTPVerify = async ({ email }, res) => {
 
     //Send email with otp
     await transporter.sendMail(mailOptions);
-    res.json({
-      status: "PENDING",
-      message: "Verification otp email sent",
-      data: {
-        email
-      }
-    })
+    // res.json({
+    //   status: "PENDING",
+    //   message: "Verification otp email sent",
+    //   data: {
+    //     email
+    //   }
+    // })
   } catch (error) {
-    res.json({
-      status: "FAILED",
-      message: error.message,
-    })
+    // res.json({
+    //   status: "FAILED",
+    //   message: error.message,
+    // })
   }
 };
 
