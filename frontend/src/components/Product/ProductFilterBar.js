@@ -29,7 +29,7 @@ import categories from "../../assets/data/categories";
 import brands from "../../assets/data/brands";
 import { listCategorys } from "../../actions/categoryActions";
 
-const INITIAL_RANGE_PRICE = [1000, 100000];
+const INITIAL_RANGE_PRICE = [1000, 10000000];
 
 const useStyles = makeStyles((theme) => ({
   divider: {
